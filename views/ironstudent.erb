@@ -1,0 +1,32 @@
+<html>
+	<body>
+		<h1>Ironhack Students</h1>
+
+	<form action="/" method="get">
+		<label>First Name</label><input name = "name"/><br>
+		<label>Surname</label><input name = "surnames"/><br>
+		<label>Website</label><input name = "website"/><br>
+		<label>Number of Dogs</label><input name = "number_of_dogs"/><br>
+		<label>Year of Birth (YYYY)</label><input name = "birth_year"/><br>
+		<label>Month of Birth (MM)</label><input name = "birth_month"/><br>
+		<label>Day of Birth (DD)</label><input name = "birth_day"/><br>
+		<label>Submit</label><input type = "submit"/><br>
+	</form>
+
+	<% if @student_list.any? %>
+		<ul>
+			<% @student_list.each do |student| %>
+				<li><%= student.name.to_s + ' ' + student.surnames.to_s %></li>	
+			<%end%>
+		</ul>
+	<% end %>
+
+	<% if @err_message %>
+		<h2><%= @err_message.to_s %></h2>
+	<% end %>
+
+	</body>
+</html>
+
+
+
